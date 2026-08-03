@@ -1,64 +1,69 @@
 # ☁️ Self-Optimizing Cloud Network Traffic Management System
 
-A cloud infrastructure project built on **Microsoft Azure** that demonstrates intelligent traffic routing, application hosting, and real-time monitoring using Azure Traffic Manager, Azure App Service, Azure Virtual Machines, and Azure Monitor. The project focuses on improving application availability and performance through efficient traffic management.
+A cloud infrastructure project built on Microsoft Azure that demonstrates intelligent traffic routing, application hosting, and real-time monitoring. The system is designed to improve application availability by distributing traffic across cloud resources while continuously monitoring performance.
+
+> **Note:** This project implements the Azure infrastructure components. AI/ML-based predictive optimization is proposed as a future enhancement.
 
 ---
 
-## 📌 Project Overview
+# 📌 Project Overview
 
-Modern cloud applications require high availability and efficient traffic distribution to ensure a seamless user experience.
+Modern cloud applications require high availability, efficient traffic routing, and continuous monitoring.
 
-This project demonstrates how Azure services can be used to deploy cloud applications, distribute incoming traffic across application endpoints, and monitor resource health in real time.
+This project demonstrates how Microsoft Azure services can be integrated to:
 
-The project is based on the concept of a **Self-Optimizing Cloud Network Traffic Management System**, where cloud resources are monitored continuously, enabling intelligent traffic management and improved reliability.
-
----
-
-## 🎯 Objectives
-
-- Improve application availability.
-- Optimize network traffic routing.
-- Monitor cloud resources in real time.
-- Reduce downtime using health-based traffic routing.
-- Demonstrate Azure cloud infrastructure deployment.
+- Deploy cloud applications
+- Route user traffic efficiently
+- Monitor infrastructure health
+- Improve application availability
+- Build a scalable cloud architecture
 
 ---
 
-## 🏗️ Architecture
+# 🏗️ Architecture
 
 ```text
-                 Internet Users
-                       │
-                       ▼
-        +-----------------------------+
-        | Azure Traffic Manager       |
-        +-----------------------------+
-                 │              │
-                 ▼              ▼
-      +----------------+   +----------------+
-      | Azure App      |   | Azure Virtual  |
-      | Service        |   | Machine        |
-      +----------------+   +----------------+
-                 │              │
-                 └──────┬───────┘
-                        ▼
-              Azure Monitor & Alerts
+                    +----------------------+
+                    |      End Users       |
+                    +----------+-----------+
+                               |
+                               v
+                 +------------------------------+
+                 |     Azure Traffic Manager     |
+                 +---------------+--------------+
+                                 |
+          +----------------------+----------------------+
+          |                                             |
+          |                                             |
+          v                                             v
++-------------------------+              +-------------------------+
+| Azure App Service       |              | Azure Virtual Machine   |
+| (Web Application)       |              | (Application Instance)  |
++------------+------------+              +------------+------------+
+             |                                          |
+             +------------------+-----------------------+
+                                |
+                                v
+                    +--------------------------+
+                    |     Azure Monitor        |
+                    | Metrics • Logs • Alerts  |
+                    +--------------------------+
 ```
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
 - Intelligent traffic routing using Azure Traffic Manager
-- Application deployment on Azure App Service
-- Cloud infrastructure using Azure Virtual Machines
-- Real-time monitoring with Azure Monitor
-- Health-based routing for improved reliability
-- Scalable cloud architecture
+- Application hosting with Azure App Service
+- Compute infrastructure using Azure Virtual Machines
+- Real-time monitoring using Azure Monitor
+- Improved availability through distributed cloud resources
+- Cloud-native architecture for scalable deployments
 
 ---
 
-## 🛠️ Azure Services Used
+# 🛠️ Azure Services Used
 
 - Microsoft Azure
 - Azure App Service
@@ -68,123 +73,153 @@ The project is based on the concept of a **Self-Optimizing Cloud Network Traffic
 
 ---
 
-## 📋 Prerequisites
+# 📋 Prerequisites
 
 - Microsoft Azure Account
-- Basic knowledge of cloud computing
-- Azure Portal access
+- Azure Subscription
+- Basic knowledge of Azure Portal
+- Resource Group
 
 ---
 
-## ⚙️ Project Workflow
+# ⚙️ Project Workflow
 
-### Step 1: Deploy the Application
+## Step 1
 
-Deploy the application using Azure App Service and Azure Virtual Machines.
-
----
-
-### Step 2: Configure Azure Traffic Manager
-
-- Create a Traffic Manager profile.
-- Add application endpoints.
-- Configure routing method.
-- Enable endpoint health monitoring.
+Create a Resource Group.
 
 ---
 
-### Step 3: Configure Azure Monitor
+## Step 2
 
-- Enable diagnostic monitoring.
-- Configure performance metrics.
-- Create alert rules.
-- Monitor application availability.
+Deploy the application using Azure App Service.
 
 ---
 
-### Step 4: Test Traffic Routing
+## Step 3
 
-- Access the application.
-- Verify Traffic Manager routes requests correctly.
-- Observe health metrics in Azure Monitor.
+Create an Azure Virtual Machine.
 
 ---
 
-## 📊 Project Flow
+## Step 4
 
-1. User sends a request.
-2. Azure Traffic Manager receives the request.
-3. Traffic Manager selects the best available endpoint.
-4. Request is forwarded to Azure App Service or Virtual Machine.
-5. Azure Monitor continuously tracks resource health.
-6. Alerts are generated if abnormal conditions are detected.
+Configure Azure Traffic Manager.
 
----
-
-## 📚 Learning Outcomes
-
-- Azure cloud infrastructure deployment
-- Azure App Service hosting
-- Azure Virtual Machine management
-- Azure Traffic Manager configuration
-- Azure Monitor and Alerts
-- High Availability concepts
-- Cloud traffic management
+- Add application endpoints
+- Configure routing method
+- Enable endpoint monitoring
 
 ---
 
-## 💡 Future Enhancements
+## Step 5
 
-- Implement AI-based traffic prediction.
-- Automatic traffic optimization using Machine Learning.
-- Dynamic resource scaling.
-- Multi-region deployment.
-- Integration with Azure Load Balancer.
-- Infrastructure as Code using Terraform or Bicep.
+Configure Azure Monitor.
 
----
-
-## 📷 Screenshots
-
-Add screenshots of:
-
-- Azure Resource Group
-- Azure App Service
-- Azure Virtual Machine
-- Azure Traffic Manager
-- Azure Monitor Dashboard
-- Alert Configuration
+- Performance Metrics
+- Activity Logs
+- Alerts
+- Health Monitoring
 
 ---
 
-## 🧰 Technologies Used
+## Step 6
+
+Access the application.
+
+Traffic Manager automatically directs users to the available endpoint while Azure Monitor continuously tracks application performance.
+
+---
+
+# 🔄 Workflow
+
+```text
+User Request
+      │
+      ▼
+Azure Traffic Manager
+      │
+      ▼
+Select Healthy Endpoint
+      │
+      ├──────────────┐
+      ▼              ▼
+Azure App Service   Azure VM
+      │              │
+      └──────┬───────┘
+             ▼
+Application Response
+             │
+             ▼
+Azure Monitor
+(Metrics • Logs • Alerts)
+```
+
+---
+
+# 📊 Project Objectives
+
+- Improve application availability
+- Distribute incoming traffic efficiently
+- Monitor infrastructure health
+- Reduce downtime
+- Build a scalable cloud architecture
+
+---
+
+# 📖 Learning Outcomes
+
+- Azure Resource Management
+- Azure App Service deployment
+- Azure Virtual Machine configuration
+- Azure Traffic Manager routing
+- Azure Monitor metrics and alerts
+- Designing highly available cloud solutions
+
+---
+
+# 📈 Future Enhancements
+
+- AI-based traffic prediction
+- Automatic traffic optimization
+- Auto Scaling using Azure Virtual Machine Scale Sets
+- Azure Load Balancer integration
+- Azure Application Gateway
+- Azure Front Door
+- Infrastructure as Code using Terraform
+- Azure Functions for automation
+
+---
+
+# 💻 Technologies Used
 
 | Category | Technology |
 |----------|------------|
 | Cloud Platform | Microsoft Azure |
 | Compute | Azure Virtual Machines |
-| Platform Service | Azure App Service |
-| Traffic Management | Azure Traffic Manager |
+| PaaS | Azure App Service |
+| Traffic Routing | Azure Traffic Manager |
 | Monitoring | Azure Monitor |
 
 ---
 
-## 🎓 Skills Demonstrated
+# 📷 Suggested Screenshots
 
-- Cloud Infrastructure Deployment
-- Azure Resource Management
-- Traffic Routing
-- Cloud Monitoring
-- High Availability
-- Performance Monitoring
-- Infrastructure Management
+- Azure Portal Dashboard
+- Resource Group
+- Azure App Service
+- Azure Virtual Machine
+- Azure Traffic Manager
+- Azure Monitor Dashboard
+- Performance Metrics
+- Alert Configuration
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Basil Ibnu Haris**
 
 B.Tech Computer Science & Engineering
 
-Cloud Computing | Microsoft Azure | AWS | Apache CloudStack | SQL | Power BI 
+Cloud Computing | Microsoft Azure | AWS | Apache CloudStack | SQL
